@@ -137,7 +137,7 @@ public class CreateTableDDLParserTest {
 	
 	@Test
 	public void testParse1() throws Exception{
-		String content = FileUtils.readFileToString(new File("src\\test\\resources\\scripts\\script1"), Charset.defaultCharset());
+		String content = FileUtils.readFileToString(new File(String.format("src%stest%sresources%sscripts%sscript1", File.separator, File.separator, File.separator, File.separator)), Charset.defaultCharset());
 		CreateTableDDLParser parser = new CreateTableDDLParser(content);
 		parser.parse();
 		assertEquals("ABC",parser.getTableName());
@@ -146,7 +146,7 @@ public class CreateTableDDLParserTest {
 	
 	@Test
 	public void testParse2() throws Exception{
-		String content = FileUtils.readFileToString(new File("src\\test\\resources\\scripts\\script2"), Charset.defaultCharset());
+		String content = FileUtils.readFileToString(new File(String.format("src%stest%sresources%sscripts%sscript2", File.separator, File.separator, File.separator, File.separator)), Charset.defaultCharset());
 		CreateTableDDLParser parser = new CreateTableDDLParser(content);
 		parser.parse();
 		assertEquals("ABC",parser.getTableName());
